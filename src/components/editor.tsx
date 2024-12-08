@@ -17,7 +17,7 @@ export default function Editor() {
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="text-center mb-8">
           <h1 className={`text-2xl lg:text-4xl text-[#252B42] font-bold mb-4 ${montserrat.className}`}>
-            EDITOR&#39;S PICK
+            EDITORS PICK
           </h1>
           <p className={`text-sm lg:text-base text-[#737373] ${montserrat.className}`}>
             Problems trying to resolve the conflict between
