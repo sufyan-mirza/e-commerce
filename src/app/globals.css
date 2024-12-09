@@ -35,3 +35,13 @@ body {
   background-image: url('../components/assets/shop-hero-1-product-slide-1.jpg');
 }
 
+@media (min-width:1160px){
+  #about{
+    background-image: url('../components/assets/background.png');
+  }
+}
+@media (min-width:1160px){
+  #about-w{
+    background-image: url('../components/assets/background2.png');
+  }
+}

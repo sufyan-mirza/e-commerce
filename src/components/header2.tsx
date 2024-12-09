@@ -8,7 +8,7 @@ const montserrat = Montserrat({
   subsets: ['latin'],
 });
 
-export default function Header() {
+export default function Header2() {
   return (
     <header className="bg-white py-3">
       <div className="max-w-[1250px] mx-auto px-4 lg:px-8">
@@ -23,28 +23,21 @@ export default function Header() {
           {/* Navigation for Small Screens */}
           <nav className="w-full lg:w-auto mt-3 lg:mt-0 flex flex-col lg:flex-row lg:gap-4">
             <Link href="/" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Home</Link>
-            <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Shop</Link>
-            <Link href="/about" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>About</Link>
-            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Blog</Link>
+            <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Product</Link>
+            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Pricing</Link>
             <Link href="/contact" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Contact</Link>
-            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Pages</Link>
+            
           </nav>
 
           {/* Login and Icons */}
-          <div className="flex items-center mt-3 lg:mt-0 space-x-3">
+          <div className="flex justify-center items-center mt-3 lg:mt-0 space-x-3">
             <Link href="/login" className="flex items-center text-[#23A6F0] text-base p-1">
-              <CiLogin />
               <span className={`${montserrat.className} text-[#23A6F0] text-sm ml-1`}>Login/Register</span>
             </Link>
-            <Link href="/" className="text-[#23A6F0] text-base flex items-center p-1">
-              <CiSearch />
+            <Link href="/login" className="flex items-center text-[#23A6F0] text-base p-1">
+              <span className={`${montserrat.className} text-[#ffffff] text-[10px] ml-1 p-1 rounded-sm bg-[#23A6F0]`}>Become a member</span>
             </Link>
-            <Link href="/" className="text-[#23A6F0] text-base flex items-center p-1">
-              <CiShoppingCart />
-            </Link>
-            <Link href="/" className="text-[#23A6F0] text-base flex items-center p-1">
-              <CiHeart />
-            </Link>
+            
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const montserrat = Montserrat({
   subsets: ['latin'],
 });
 
-export default function Topbar() {
+export default function Topbar2() {
   return (
     <div className="bg-[#23856D] py-2 hidden lg:block">
       <div className="max-w-[1250px] mx-auto px-4 md:px-6 lg:px-8">

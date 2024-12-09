@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 export default function Practice() {
   return (
     <div className="py-16 bg-[#ffffff]">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <h4 className={`${montserrat.className} text-[#23A6F0] text-sm font-medium mb-4`}>Practice Advice</h4>
           <h1 className={`${montserrat.className} text-[#252B42] text-4xl font-bold mb-4`}>Featured Posts</h1>
@@ -25,7 +25,7 @@ export default function Practice() {
             Problems trying to resolve the conflict between <br/>the two major realms of Classical physics: Newtonian mechanics
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-center items-center min-h-screen">
           {[practice, practice2, practice3].map((image, index) => (
             <div key={index} className="bg-white shadow-md rounded-lg">
               <div className="relative mb-3">
