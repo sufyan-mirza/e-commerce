@@ -45,3 +45,9 @@ body {
     background-image: url('../components/assets/background2.png');
   }
 }
+
+@media (min-width:1160px){
+  #contact{
+    background-image: url('../components/assets/background3.png');
+  }
+}
