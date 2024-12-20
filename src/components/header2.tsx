@@ -22,10 +22,10 @@ export default function Header2() {
 
           {/* Navigation for Small Screens */}
           <nav className="w-full lg:w-auto mt-3 lg:mt-0 flex flex-col lg:flex-row lg:gap-4">
-            <Link href="/" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Home</Link>
-            <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Product</Link>
-            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Pricing</Link>
-            <Link href="/contact" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Contact</Link>
+            <Link href="/" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Home</Link>
+            <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Product</Link>
+            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Pricing</Link>
+            <Link href="/contact" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Contact</Link>
             
           </nav>
 

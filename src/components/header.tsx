@@ -22,12 +22,12 @@ export default function Header() {
 
           {/* Navigation for Small Screens */}
           <nav className="w-full lg:w-auto mt-3 lg:mt-0 flex flex-col lg:flex-row lg:gap-4">
-            <Link href="/" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Home</Link>
-            <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Shop</Link>
-            <Link href="/about" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>About</Link>
-            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Blog</Link>
-            <Link href="/contact" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Contact</Link>
-            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1`}>Pages</Link>
+            <Link href="/" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Home</Link>
+            <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Shop</Link>
+            <Link href="/about" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>About</Link>
+            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Blog</Link>
+            <Link href="/contact" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Contact</Link>
+            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Pages</Link>
           </nav>
 
           {/* Login and Icons */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Montserrat } from '@next/font/google';
-import './assets/shop-hero-1-product-slide-1.jpg'
+import './assets/shop-hero-1-product-slide-1.jpg';
+import Link from 'next/link';
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '700', '800', '900'], // Specify font weights
   subsets: ['latin'], // Specify character subsets
@@ -25,11 +26,21 @@ export default function Hero() {
               We know how large objects will act, <br /> but things on a small scale.
             </p>
             <div className="flex justify-center sm:justify-start">
-              <button 
-                className={`${montserrat.className} bg-[#2DC071] text-white text-sm sm:text-lg px-6 sm:w-1/3 h-[48px] sm:h-[62px]`}
+
+              
+              < Link href="/shop"
+                className={`${montserrat.className} bg-[#2DC071] hover:bg-[#2dc090] flex items-center text-center text-white text-sm sm:text-lg px-6 sm:w-1/3 h-[48px] sm:h-[62px]`}
               >
-                SHOP NOW
-              </button>
+
+                
+                
+                  SHOP NOW
+                  
+                
+              
+              </Link>
+              
+
             </div>
           </div>
         </div>
