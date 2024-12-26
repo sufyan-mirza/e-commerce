@@ -25,7 +25,7 @@ export default function Header() {
             <Link href="/" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Home</Link>
             <Link href="/shop" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Shop</Link>
             <Link href="/about" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>About</Link>
-            <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Blog</Link>
+            <Link href="/team" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Team</Link>
             <Link href="/contact" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Contact</Link>
             <Link href="/price" className={`${montserrat.className} text-[#737373] text-sm font-medium text-center lg:text-left py-1 hover:underline`}>Pages</Link>
           </nav>
