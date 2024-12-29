@@ -7,7 +7,9 @@ import Vita from "@/components/vita";
 import Neural from "@/components/neural";
 import Practice from "@/components/practice";
 import Footer from "@/components/footer";
-export default function Home() {
+export default async function Home() {
+  const fetchdata = await fetch("https://dummyjson.com/products")
+  const response = await fetchdata.json()
   return (
     <div>
     <Topbar/>

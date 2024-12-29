@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'; // Import Link
 import product1 from './assets/product1.png';
 import product2 from './assets/product2.png';
 import product3 from './assets/product3.png';
@@ -15,7 +16,13 @@ const montserrat = Montserrat({
   subsets: ['latin'], // Specify character subsets
 });
 
-export default function Bestproduct() {
+const productImages = [product1, product2, product3, product4, product5, product6, product7, product8];
+
+export default async function Bestproduct() {
+  const fetchdata = await fetch("https://dummyjson.com/products");
+  const response = await fetchdata.json();
+  
+
   return (
     <div className="bg-white py-16">
       <div className="max-w-[1200px] mx-auto px-4">
@@ -31,26 +38,32 @@ export default function Bestproduct() {
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
-          {[product1, product2, product3, product4, product5, product6, product7, product8].map((product, index) => (
+          {response.products.map((item: any, index: number) => (
             <div key={index} className="w-full">
-              <Image src={product} alt={`Product ${index + 1}`} className="w-full h-[250px] object-cover rounded-lg" />
-              <div className="flex flex-col items-center justify-center gap-2 mt-4">
-                <h1 className={`text-[#252B42] font-semibold text-base ${montserrat.className}`}>
-                  Graphic Design
-                </h1>
-                <h4 className={`text-sm text-gray-500 font-medium ${montserrat.className}`}>
-                  English Department
-                </h4>
-                <p className={`text-base font-medium text-gray-400 ${montserrat.className}`}>
-                  $16.48<span className="text-[#23856D] ml-2">$6.48</span>
-                </p>
-                <div className="flex gap-1">
-                  <div className="bg-[#E77C40] w-4 h-4 rounded-full"></div>
-                  <div className="bg-[#23A6F0] w-4 h-4 rounded-full"></div>
-                  <div className="bg-[#23856D] w-4 h-4 rounded-full"></div>
-                  <div className="bg-[#252B42] w-4 h-4 rounded-full"></div>
+              <Link href={`/product/${item.id}`}>
+                <Image
+                  src={productImages[index % productImages.length]} // Select image dynamically
+                  alt={`Product ${index + 1}`}
+                  className="w-full h-[250px] object-cover rounded-lg"
+                />
+                <div className="flex flex-col items-center justify-center gap-2 mt-4">
+                  <h1 className={`text-[#252B42] font-semibold text-base ${montserrat.className}`}>
+                    {item.title}
+                  </h1>
+                  <h4 className={`text-sm text-gray-500 font-medium ${montserrat.className}`}>
+                    {item.brand}
+                  </h4>
+                  <p className={`text-base font-medium text-gray-400 ${montserrat.className}`}>
+                    ${item.price} <span className="text-[#23856D] ml-2">${(item.price * 0.8).toFixed(2)}</span>
+                  </p>
+                  <div className="flex gap-1">
+                    <div className="bg-[#E77C40] w-4 h-4 rounded-full"></div>
+                    <div className="bg-[#23A6F0] w-4 h-4 rounded-full"></div>
+                    <div className="bg-[#23856D] w-4 h-4 rounded-full"></div>
+                    <div className="bg-[#252B42] w-4 h-4 rounded-full"></div>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
