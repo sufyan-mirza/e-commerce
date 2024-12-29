@@ -1,5 +1,7 @@
-import React from 'react';
-import Link from 'next/link'; // Import Link
+'use client'
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import product1 from './assets/product1.png';
 import product2 from './assets/product2.png';
 import product3 from './assets/product3.png';
@@ -8,20 +10,31 @@ import product5 from './assets/product5.png';
 import product6 from './assets/product6.png';
 import product7 from './assets/product7.png';
 import product8 from './assets/product8.png';
-import Image from 'next/image';
 import { Montserrat } from '@next/font/google';
 
 const montserrat = Montserrat({
-  weight: ['300', '400', '500', '700', '800', '900'], // Specify font weights
-  subsets: ['latin'], // Specify character subsets
+  weight: ['300', '400', '500', '700', '800', '900'], 
+  subsets: ['latin'], 
 });
 
 const productImages = [product1, product2, product3, product4, product5, product6, product7, product8];
 
-export default async function Bestproduct() {
-  const fetchdata = await fetch("https://dummyjson.com/products");
-  const response = await fetchdata.json();
-  
+const Bestproduct = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://dummyjson.com/products");
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-white py-16">
@@ -36,13 +49,12 @@ export default async function Bestproduct() {
           </p>
         </div>
 
-        {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
-          {response.products.map((item: any, index: number) => (
-            <div key={index} className="w-full">
+          {products.map((item, index) => (
+            <div key={item.id} className="w-full">
               <Link href={`/product/${item.id}`}>
                 <Image
-                  src={productImages[index % productImages.length]} // Select image dynamically
+                  src={productImages[index % productImages.length]} 
                   alt={`Product ${index + 1}`}
                   className="w-full h-[250px] object-cover rounded-lg"
                 />
@@ -70,4 +82,6 @@ export default async function Bestproduct() {
       </div>
     </div>
   );
-}
+};
+
+export default Bestproduct;

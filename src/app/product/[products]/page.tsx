@@ -2,14 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Static images import
-import product1 from '/../my-app/src/components/assets/product1.png';
-import product2 from '/../my-app/src/components/assets/product2.png';
-import product3 from '/../my-app/src/components/assets/product3.png';
-import product4 from '/../my-app/src/components/assets/product4.png';
-import product5 from '/../my-app/src/components/assets/product5.png';
-import product6 from '/../my-app/src/components/assets/product6.png';
-import product7 from '/../my-app/src/components/assets/product7.png';
-import product8 from '/../my-app/src/components/assets/product8.png';
+import product1 from '../../../components/assets/product1.png';
+import product2 from '../../../components/assets/product2.png';
+import product3 from '../../../components/assets/product3.png';
+import product4 from '../../../components/assets/product4.png';
+import product5 from '../../../components/assets/product5.png';
+import product6 from '../../../components/assets/product6.png';
+import product7 from '../../../components/assets/product7.png';
+import product8 from '../../../components/assets/product8.png';
 
 // Map for product images
 const productImages: { [key: string]: StaticImageData } = {
