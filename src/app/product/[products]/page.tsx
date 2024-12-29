@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { StaticImageData } from 'next/image'; // Import StaticImageData type
 
 // Static images import
 import product1 from '../../../components/assets/product1.png';
@@ -43,8 +44,6 @@ const productImages: { [key: string]: StaticImageData } = {
   '28': product4,
   '29': product5,
   '30': product6,
-  
-
 };
 
 const Page = async ({ params }: { params: { products: string } }) => {

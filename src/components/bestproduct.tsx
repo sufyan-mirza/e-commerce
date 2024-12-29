@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,6 +12,14 @@ import product7 from './assets/product7.png';
 import product8 from './assets/product8.png';
 import { Montserrat } from '@next/font/google';
 
+// Define the Product interface
+interface Product {
+  id: number;
+  title: string;
+  brand: string;
+  price: number;
+}
+
 const montserrat = Montserrat({
   weight: ['300', '400', '500', '700', '800', '900'], 
   subsets: ['latin'], 
@@ -19,8 +27,8 @@ const montserrat = Montserrat({
 
 const productImages = [product1, product2, product3, product4, product5, product6, product7, product8];
 
-const Bestproduct = () => {
-  const [products, setProducts] = useState([]);
+const Bestproduct: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]); // Use the Product interface
 
   useEffect(() => {
     const fetchData = async () => {
