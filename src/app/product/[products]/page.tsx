@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { StaticImageData } from 'next/image'; // Import StaticImageData type
-
+import Topbar2 from '@/components/topbar2';
+import Header from '@/components/header';
+import Brand from '@/components/brand';
+import Bestproduct from '@/components/bestproduct';
+import Footer from '@/components/footer';
 // Static images import
 import product1 from '../../../components/assets/product1.png';
 import product2 from '../../../components/assets/product2.png';
@@ -62,35 +66,56 @@ const Page = async ({ params }: { params: { products: string } }) => {
 
     return (
       <>
-        <div className="w-1/2 grid justify-center items-center p-4 pb-5 gap-6 sm:p-10 float-start">
-          <Image
-            src={productImage}
-            width={350}
-            height={350}
-            alt="product image"
-            className="bg-slate-200"
-          />
-        </div>
-        <div className="w-1/2 grid items-center p-4 pb-5 gap-6 sm:p-10 float-start">
-          <p className="font-bold">Product Id: {response.id}</p>
-          <h3>
-            <span className="font-bold">Title:</span> {response.title}
-          </h3>
-          <p>
-            <span className="font-bold">Category:</span> {response.category}
-          </p>
-          <p>
-            <span className="font-bold">Description:</span> {response.description}
-          </p>
-          <p>
-            <span className="font-bold">Price:</span> ${response.price}
-          </p>
-          <p>
-            <span className="font-bold">Brand:</span> {response.brand}
-          </p>
-          <Link href="/cart" className="bg-black text-white p-2 w-40 text-center">
-            Add to Cart
-          </Link>
+      <div>
+        <Topbar2/>
+        <Header/>
+
+        <div className="p-4 pb-5 gap-6 sm:p-10">
+  <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap justify-center items-center gap-6">
+    {/* Product Image */}
+    <div className="w-full lg:w-3/6 xl:w-1/4 flex justify-center items-center">
+      <Image
+        src={productImage}
+        width={350}
+        height={50}
+        alt="product image"
+        className="bg-slate-200 h-96"
+      />
+    </div>
+
+    {/* Product Details */}
+    <div className="w-full lg:w-1/3 xl:w-1/2 flex flex-col items-start p-4 pb-5 gap-4 sm:p-10">
+      <p className="font-bold text-lg lg:text-xl">Product Id: {response.id}</p>
+      <h3 className="text-lg lg:text-xl">
+        <span className="font-bold">Title:</span> {response.title}
+      </h3>
+      <p className="text-lg lg:text-xl">
+        <span className="font-bold">Category:</span> {response.category}
+      </p>
+      <p className="text-lg lg:text-xl">
+        <span className="font-bold">Description:</span> {response.description}
+      </p>
+      <p className="text-lg lg:text-xl">
+        <span className="font-bold">Price:</span> ${response.price}
+      </p>
+      <p className="text-lg lg:text-xl">
+        <span className="font-bold">Brand:</span> {response.brand}
+      </p>
+      <Link
+        href="/cart"
+        className="bg-black text-white p-3 w-full sm:w-48 text-center rounded hover:bg-gray-800"
+      >
+        Add to Cart
+      </Link>
+    </div>
+  </div>
+</div>
+
+
+
+        <Bestproduct/>
+        <Brand/>
+        <Footer/>
         </div>
       </>
     );
